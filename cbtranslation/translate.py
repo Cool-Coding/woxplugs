@@ -9,7 +9,11 @@ from wox import Wox
 class Main(Wox):
 
     def request(self, url):
-        return requests.get(url)
+        heads = {}
+        heads['User-Agent'] = 'Mozilla/5.0 ' \
+                      '(Macintosh; U; Intel Mac OS X 10_6_8; en-us) AppleWebKit/534.50 ' \
+                      '(KHTML, like Gecko) Version/5.1 Safari/534.50'
+        return requests.get(url,headers = heads)
 
     # 必须有一个query方法，用户执行查询的时候会自动调用query方法
     def query(self, key):
@@ -30,6 +34,10 @@ class Main(Wox):
               "SubTitle": subtext,
               "IcoPath": "Images/app.ico"
             })
+        f = open("E:/out.txt",'w')
+        for i in results:
+            f.write(i.get("Title"))
+            
         return results
 
 
