@@ -2,7 +2,7 @@
 import requests
 from bs4 import BeautifulSoup
 import webbrowser
-from wox import Wox,WoxAPI
+from wox import Wox
 
 # 用户写的Python类必须继承Wox类 https://github.com/qianlifeng/Wox/blob/master/PythonHome/wox.py
 # 这里的Wox基类做了一些工作，简化了与Wox通信的步骤。
@@ -17,7 +17,6 @@ class Main(Wox):
 
     def openUrl(self,url):
         webbrowser.open(url)
-        WoxAPI.change_query(url)
 
     # 必须有一个query方法，用户执行查询的时候会自动调用query方法
     def query(self, key):
