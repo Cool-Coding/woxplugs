@@ -1,0 +1,12 @@
+{
+    "ID":"59b95232-a712-4b73-8db7-3ec89ce79d96",
+    "ActionKeyword":"icb",
+    "Name":"translation",
+    "Description":"icb online translation",
+    "Author":"yangguangyong",
+    "Version":"1.0.0",
+    "Language":"python",
+	"Website":"https://github.com/Cool-Coding",
+    "ExecuteFileName":"translate.py",
+	"IcoPath": "Images\\app.ico"
+}
