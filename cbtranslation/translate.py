@@ -15,10 +15,10 @@ class Main(Wox):
     def query(self, key):
         url = 'http://www.iciba.com/'+key
         r = self.request(url)
-        bs = BeautifulSoup(r.text)
+        bs = BeautifulSoup(r.text,features="html.parser")
 
         results = []
-        for i in bs.select(".base-list"):
+        for i in bs.select("ul .clearfix"):
             text = i.text.replace('\n', '')
             subtext = ''
             if len(text) > 50:
@@ -30,6 +30,10 @@ class Main(Wox):
               "SubTitle": subtext,
               "IcoPath": "Images/app.ico"
             })
+        f = open("E:/out.txt", "w")
+        for i in results:
+          f.write(i.get("Title"))
+        f.close()
         return results
 
 
