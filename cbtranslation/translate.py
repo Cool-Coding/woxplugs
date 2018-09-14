@@ -30,10 +30,6 @@ class Main(Wox):
               "SubTitle": subtext,
               "IcoPath": "Images/app.ico"
             })
-        f = open("E:/out.txt", "w")
-        for i in results:
-          f.write(i.get("Title"))
-        f.close()
         return results
 
 
